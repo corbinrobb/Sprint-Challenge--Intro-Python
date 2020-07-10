@@ -92,11 +92,13 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
   within = []
 
+  # Get largest and smallest for both lons and lats
   greater_lat = lat1 if lat1 > lat2 else lat2
   lesser_lat = lat1 if lat1 < lat2 else lat2
   greater_lon = lon1 if lon1 > lon2 else lon2
   lesser_lon = lon1 if lon1 < lon2 else lon2
 
+  # check if in the lat and lon ranges and if city is then append to within list
   for c in cities:
     if c.lat > lesser_lat and c.lat < greater_lat:
       if c.lon > lesser_lon and c.lon < greater_lon:
